@@ -18,36 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-Ii-kB4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-Ii-kB4">
                                 <rect key="frame" x="21.5" y="117" width="332" height="65"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="55"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-mn-iUk">
-                                <rect key="frame" x="52" y="369" width="271" height="167"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcI-vJ-iKE">
                                 <rect key="frame" x="55" y="260" width="264" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9Fz-EE-oK3"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Yb3-8C-shb"/>
+                                </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-mn-iUk">
+                                <rect key="frame" x="39" y="369" width="297" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="qhP-lf-smf"/>
+                                    <constraint firstAttribute="width" constant="297" id="wN9-Pd-IrR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.27442499061396619" green="0.89359009617246909" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PcI-vJ-iKE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3qu-Dc-A8J"/>
                             <constraint firstItem="2QM-mn-iUk" firstAttribute="top" secondItem="PcI-vJ-iKE" secondAttribute="bottom" constant="79" id="8d6-AE-sKy"/>
                             <constraint firstItem="PcI-vJ-iKE" firstAttribute="top" secondItem="nf9-Ii-kB4" secondAttribute="bottom" constant="78" id="WGt-WT-lzj"/>
-                            <constraint firstItem="2QM-mn-iUk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dtj-fl-bHc"/>
+                            <constraint firstItem="2QM-mn-iUk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c7M-Xh-dJV"/>
                             <constraint firstItem="nf9-Ii-kB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="oxB-yp-LOp"/>
                             <constraint firstItem="nf9-Ii-kB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wcA-pQ-KAp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PcI-vJ-iKE" secondAttribute="trailing" constant="37" id="zpJ-DO-i9l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nameFiled" destination="PcI-vJ-iKE" id="9py-8S-4Yl"/>
+                        <outlet property="songText" destination="2QM-mn-iUk" id="4GK-NY-weq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
