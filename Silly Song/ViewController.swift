@@ -35,7 +35,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func displayLyrics(_ sender: Any) {
-        songText.text = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameFiled.text!)
+        if(nameFiled.text != nil){
+            if((nameFiled.text?.count)! > 0){
+                songText.text = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameFiled.text!)
+            }else {
+                let alert = UIAlertController(title: "Error", message: "Type some Name", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func shortNameForName(name: String) -> String {
